@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import logo from '../assets/favicon.png'
+import { Link } from 'expo-router'
 
 const index = () => {
   return (
@@ -11,6 +12,8 @@ const index = () => {
       <View>
         <Text style={styles.card}>This is Card Components</Text>
       </View>
+      <Link href="/about" style={styles.link}>About Page</Link>
+      <Link href="/contact" style={styles.link}>Contact Page</Link>
     </View>
   )
 }
@@ -36,5 +39,9 @@ const styles = StyleSheet.create({
   },
   img:{
     marginVertical:20
+  },
+  link:{
+    marginTop:10,
+  
   }
 })
