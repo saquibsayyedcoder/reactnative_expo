@@ -1,47 +1,127 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
-import React from 'react'
-import logo from '../assets/favicon.png'
-import { Link } from 'expo-router'
+import React from "react";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { Link } from "expo-router";
+import logo from "../assets/download (4).jpeg";
+import { Ionicons } from "@expo/vector-icons";
 
-const index = () => {
+const Index = () => {
   return (
     <View style={styles.container}>
-   <Image source={logo} />
-      <Text style={styles.title}>Saquib Sayyed</Text> 
-      <Text style={{marginTop:10, marginBottom: 10}}>MERN Stack Developer</Text>
-      <View>
-        <Text style={styles.card}>This is Card Components</Text>
-      </View>
-      <Link href="/about" style={styles.link}>About Page</Link>
-      <Link href="/contact" style={styles.link}>Contact Page</Link>
-    </View>
-  )
-}
+      
+      {/* Logo */}
+      <Image source={logo} style={styles.logo} />
 
-export default index
+      {/* Title */}
+      <Text style={styles.title}>Saquib Restaurant</Text>
+      <Text style={styles.subtitle}>
+        Delicious food, delivered with love 🍔❤️
+      </Text>
+
+      {/* Info Card */}
+      <View style={styles.card}>
+        <View style={styles.cardRow}>
+          <Ionicons name="restaurant-outline" size={22} color="#E63946" />
+          <Text style={styles.cardText}>Fresh & Tasty Food</Text>
+        </View>
+
+        <View style={styles.cardRow}>
+          <Ionicons name="time-outline" size={22} color="#E63946" />
+          <Text style={styles.cardText}>Fast Service</Text>
+        </View>
+
+        <View style={styles.cardRow}>
+          <Ionicons name="heart-outline" size={22} color="#E63946" />
+          <Text style={styles.cardText}>Loved by Customers</Text>
+        </View>
+      </View>
+
+      {/* Buttons */}
+      <Link href="/about" asChild>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>About Us</Text>
+        </TouchableOpacity>
+      </Link>
+
+      <Link href="/contact" asChild>
+        <TouchableOpacity style={styles.outlineButton}>
+          <Text style={styles.outlineButtonText}>Contact Us</Text>
+        </TouchableOpacity>
+      </Link>
+
+    </View>
+  );
+};
+
+export default Index;
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1,
-    alignItems:'center',
-    justifyContent:'center'
+  container: {
+    flex: 1,
+    backgroundColor: "#FFF8F0",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 20,
   },
-  title:{
-    fontWeight:'bold',
-    fontSize:18
+  logo: {
+    width: 90,
+    height: 90,
+    marginBottom: 15,
   },
-  card:{
-    backgroundColor:'#add8e6',
-    padding:20,
-    borderRadius: 5,
-    boxShadow: '4px 4px 10px rgba(0,0,0,0.1)'
-
+  title: {
+    fontSize: 26,
+    fontWeight: "bold",
+    color: "#1D3557",
   },
-  img:{
-    marginVertical:20
+  subtitle: {
+    fontSize: 14,
+    color: "#6C757D",
+    marginBottom: 25,
   },
-  link:{
-    marginTop:10,
-  
-  }
-})
+  card: {
+    backgroundColor: "#FFFFFF",
+    width: "100%",
+    borderRadius: 16,
+    padding: 20,
+    marginBottom: 25,
+    elevation: 5,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+  },
+  cardRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 12,
+  },
+  cardText: {
+    marginLeft: 12,
+    fontSize: 16,
+    color: "#333",
+  },
+  button: {
+    backgroundColor: "#E63946",
+    width: "100%",
+    paddingVertical: 14,
+    borderRadius: 30,
+    alignItems: "center",
+    marginBottom: 12,
+  },
+  buttonText: {
+    color: "#FFF",
+    fontSize: 16,
+    fontWeight: "600",
+  },
+  outlineButton: {
+    borderWidth: 1.5,
+    borderColor: "#E63946",
+    width: "100%",
+    paddingVertical: 14,
+    borderRadius: 30,
+    alignItems: "center",
+  },
+  outlineButtonText: {
+    color: "#E63946",
+    fontSize: 16,
+    fontWeight: "600",
+  },
+});
