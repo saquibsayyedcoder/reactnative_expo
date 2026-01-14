@@ -1,22 +1,22 @@
 import React from "react";
-import { View, useColorScheme } from "react-native";
+import { Text, useColorScheme } from "react-native";
 import Colors from "../constant/Color";
 
-const ThemeView = ({ style, children, ...props }) => {
+const ThemeText = ({ style, children, ...props }) => {
   const colorScheme = useColorScheme();
   const theme = Colors[colorScheme] ?? Colors.light;
 
   return (
-    <View
+    <Text
       {...props}
       style={[
-        { backgroundColor: theme.background },
+        { color: theme.text },
         style,
       ]}
     >
       {children}
-    </View>
+    </Text>
   );
 };
 
-export default ThemeView;
+export default ThemeText;

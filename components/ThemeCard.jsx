@@ -2,7 +2,7 @@ import React from "react";
 import { View, useColorScheme } from "react-native";
 import Colors from "../constant/Color";
 
-const ThemeView = ({ style, children, ...props }) => {
+const ThemeCard = ({ style, children, ...props }) => {
   const colorScheme = useColorScheme();
   const theme = Colors[colorScheme] ?? Colors.light;
 
@@ -10,7 +10,15 @@ const ThemeView = ({ style, children, ...props }) => {
     <View
       {...props}
       style={[
-        { backgroundColor: theme.background },
+        {
+          backgroundColor: theme.card,
+          padding: 16,
+          borderRadius: 12,
+          shadowColor: "#000",
+          shadowOpacity: 0.1,
+          shadowRadius: 6,
+          elevation: 4,
+        },
         style,
       ]}
     >
@@ -19,4 +27,4 @@ const ThemeView = ({ style, children, ...props }) => {
   );
 };
 
-export default ThemeView;
+export default ThemeCard;

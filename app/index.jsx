@@ -3,10 +3,11 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { Link } from "expo-router";
 import logo from "../assets/download (4).jpeg";
 import { Ionicons } from "@expo/vector-icons";
+import ThemeView from "../components/ThemeView";
 
 const Index = () => {
   return (
-    <View style={styles.container}>
+    <ThemeView style={styles.container}>
       
       {/* Logo */}
       <Image source={logo} style={styles.logo} />
@@ -36,19 +37,19 @@ const Index = () => {
       </View>
 
       {/* Buttons */}
-      <Link href="/about" asChild>
+      <Link href="/login" asChild>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>About Us</Text>
+          <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
       </Link>
 
-      <Link href="/contact" asChild>
+      <Link href="/register" asChild>
         <TouchableOpacity style={styles.outlineButton}>
-          <Text style={styles.outlineButtonText}>Contact Us</Text>
+          <Text style={styles.outlineButtonText}>Register</Text>
         </TouchableOpacity>
       </Link>
 
-    </View>
+    </ThemeView>
   );
 };
 
