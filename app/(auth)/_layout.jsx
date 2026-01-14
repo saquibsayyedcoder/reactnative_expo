@@ -8,7 +8,9 @@ const _layout = () => {
    <>
    <StatusBar style='auto' />
    <Stack
-   screenOptions={{headerShown:false, animation:"none"}}
+   screenOptions={{headerShown:false, animation:"none"}} 
+  //  thes will be change the header of screen not showing auth/login and auth/register very usefull
+
     />
    </>
   )
